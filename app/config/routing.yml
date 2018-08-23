@@ -1,0 +1,12 @@
+app_home:
+    path: /
+    defaults:
+        _controller: AppBundle\Controller\HomeController:indexAction
+
+app_friendly:
+    path: /{uri}/{parameters}
+    requirements:
+        parameters: .+
+    defaults:
+        _controller: AppBundle\Controller\FriendlyUrlController:indexAction
+        parameters: null

@@ -1,0 +1,28 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <div class="d-flex flex-row justify-content-center">
+        <table class="table mt-5 w-50">
+            <thead>
+            <tr>
+                <th scope="col">Friendly url</th>
+                <th scope="col">Item type</th>
+                <th scope="col">Item id</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for friendlyUrl in friendlyUrls %}
+                <tr>
+                    <td>
+                        <a href="{{ url('app_friendly', { 'uri': friendlyUrl.requestUri }) }}">
+                            /{{ friendlyUrl.requestUri }}
+                        </a>
+                    </td>
+                    <td>{{ friendlyUrl.itemType }}</td>
+                    <td>{{ friendlyUrl.itemId }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

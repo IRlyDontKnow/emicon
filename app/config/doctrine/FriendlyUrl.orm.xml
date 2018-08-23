@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping">
+    <entity name="AppBundle\Model\FriendlyUrl" table="friendly_url">
+        <unique-constraints>
+            <unique-constraint columns="request_uri,item_type,item_id"/>
+        </unique-constraints>
+        <id name="id" type="integer">
+            <generator strategy="AUTO"/>
+        </id>
+        <field name="requestUri" type="string" unique="true"/>
+        <field name="itemType" type="string"/>
+        <field name="itemId" type="integer"/>
+    </entity>
+</doctrine-mapping>
