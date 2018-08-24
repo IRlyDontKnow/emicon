@@ -35,7 +35,3 @@ services:
         calls:
             - [addMapping, ['page', 'AppBundle\Controller\PageController:show']]
             - [addMapping, ['product', 'AppBundle\Controller\ProductController:show']]
-
-    AppBundle\Routing\FriendlyRouterListener:
-        tags:
-            - { name: kernel.event_subscriber }
